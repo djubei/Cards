@@ -8,7 +8,7 @@ export const Links = () => {
         <div className="App">
             {pages.map(t => {
                 return (
-                    <NavLink style={{margin: '10px', display: "inline-block"}} key={t.id} to={t.path}>{t.page}</NavLink>
+                    <NavLink style={{margin: '10px', display: "inline-block"}} key={t.id} to={t.path}>{t.title}</NavLink>
                 )
             })}
         </div>

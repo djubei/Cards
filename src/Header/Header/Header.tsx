@@ -1,15 +1,23 @@
 import React from 'react';
-import {Routes} from "../Routes/Routes";
 import {Links} from "../Links/Links";
-import {Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
+import {pages, PageType} from "../Routes/Path";
 
+
+const mappedRoutes = pages.map((p: PageType) => (
+    <Route
+        key={p.id}
+        path={p.path}
+        render={() => p.page}
+    />
+));
 
 export const Header = () => {
     return (
         <div className="App">
             <Links/>
             <Switch>
-                <Routes/>
+                {mappedRoutes}
             </Switch>
 
         </div>
